@@ -7,7 +7,7 @@ import '../components/resultado_widget.dart';
 class CampoMinadoApp extends StatelessWidget {
   const CampoMinadoApp({Key? key}) : super(key: key);
 
-  _reiniciar() {
+  void _reiniciar() {
     print("Reiniciar");
   }
 
@@ -16,7 +16,7 @@ class CampoMinadoApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: ResultadoWidget(
-          venceu: true,
+          venceu: false,
           onReiniciar: _reiniciar, // Remova os parênteses aqui
         ),
         body: Container(
