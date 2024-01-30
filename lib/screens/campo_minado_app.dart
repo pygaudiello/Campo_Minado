@@ -58,7 +58,7 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
 
   Tabuleiro _getTabuleiro(double largura, double altura) {
     if (_tabuleiro == null) {
-      int qtdeColunas = 15;
+      int qtdeColunas = 14;
       double tamanhoCampo = largura / qtdeColunas;
       int qtdeLinhas = (altura / tamanhoCampo).floor();
 
@@ -80,16 +80,19 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
           onReiniciar: _reiniciar,
         ),
         body: Container(
-          color: Colors.grey,
+          color: Color.fromARGB(232, 50, 70, 182),
           child: LayoutBuilder(
             builder: (ctx, constraints) {
-              return TabuleiroWidget(
-                tabuleiro: _getTabuleiro(
-                  constraints.maxWidth,
-                  constraints.maxHeight,
+              return Padding(
+                padding: EdgeInsets.all(10),
+                child: TabuleiroWidget(
+                  tabuleiro: _getTabuleiro(
+                    constraints.maxWidth,
+                    constraints.maxHeight,
+                  ),
+                  onAbrir: _abrir,
+                  onAlternarMarcacao: _alternarMarcacao,
                 ),
-                onAbrir: _abrir,
-                onAlternarMarcacao: _alternarMarcacao,
               );
             },
           ),

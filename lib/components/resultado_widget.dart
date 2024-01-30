@@ -49,7 +49,7 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      color: Color.fromARGB(232, 50, 70, 182),
       child: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(10),
