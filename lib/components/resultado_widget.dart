@@ -1,11 +1,26 @@
-// ignore_for_file: use_key_in_widget_constructors
-
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        CircleAvatar,
+        Color,
+        Colors,
+        Container,
+        EdgeInsets,
+        Icon,
+        IconButton,
+        IconData,
+        Icons,
+        PreferredSizeWidget,
+        SafeArea,
+        Size,
+        StatelessWidget,
+        Widget;
 
 class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   final bool? venceu;
-  final Function onReiniciar;
+  final Function()? onReiniciar;
 
+  // ignore: use_key_in_widget_constructors
   const ResultadoWidget({
     required this.venceu,
     required this.onReiniciar,
@@ -15,9 +30,9 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
     if (venceu == null) {
       return Colors.yellow;
     } else if (venceu!) {
-      return Colors.green.shade300;
+      return Colors.green[300]!;
     } else {
-      return Colors.red.shade300;
+      return Colors.red[300]!;
     }
   }
 
@@ -39,12 +54,15 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
         child: Container(
           padding: const EdgeInsets.all(10),
           child: CircleAvatar(
-            radius: 20,
             backgroundColor: _getCor(),
-            child: Icon(
-              _getIcon(),
-              color: Colors.black,
-              size: 35,
+            child: IconButton(
+              padding: const EdgeInsets.all(0),
+              icon: Icon(
+                _getIcon(),
+                color: Colors.black,
+                size: 35,
+              ),
+              onPressed: onReiniciar,
             ),
           ),
         ),

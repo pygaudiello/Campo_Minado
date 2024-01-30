@@ -1,9 +1,4 @@
-// ignore_for_file: unused_import, avoid_function_literals_in_foreach_calls, avoid_print
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-
-import 'explosao_exception.dart';
+import '../models/explosao_exception.dart';
 
 class Campo {
   final int linha;
@@ -99,7 +94,7 @@ class Campo {
     return vizinhos.every((v) => !v.minado);
   }
 
-  int get qtdeMinasNaVizinhanca {
+  int get qtdeMinasNaVizinhaca {
     return vizinhos.where((v) => v.minado).length;
   }
 }

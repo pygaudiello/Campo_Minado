@@ -1,8 +1,6 @@
-// ignore_for_file: avoid_function_literals_in_foreach_calls
-
 import 'dart:math';
 
-import 'campo.dart';
+import '../models/campo.dart';
 
 class Tabuleiro {
   final int linhas;
